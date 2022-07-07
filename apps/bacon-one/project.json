@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/bacon-one/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/bacon-one",
+        "index": "apps/bacon-one/src/index.html",
+        "baseHref": "/",
+        "main": "apps/bacon-one/src/main.tsx",
+        "polyfills": "apps/bacon-one/src/polyfills.ts",
+        "tsConfig": "apps/bacon-one/tsconfig.app.json",
+        "assets": [
+          "apps/bacon-one/src/favicon.ico",
+          "apps/bacon-one/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/bacon-one/src/environments/environment.ts",
+              "with": "apps/bacon-one/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "bacon-one:build",
+        "hmr": true,
+        "proxyConfig": "apps/bacon-one/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "bacon-one:build:development"
+        },
+        "production": {
+          "buildTarget": "bacon-one:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/bacon-one/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/bacon-one"],
+      "options": {
+        "jestConfig": "apps/bacon-one/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

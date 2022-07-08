@@ -12,7 +12,7 @@ import { ActorEntity } from './entities/actor.entity';
 export class ActorBulkUpdate {
   constructor(
     @InjectRepository(ActorEntity)
-    private readonly actorsRepo: Repository<ActorEntity>,
+    private readonly actorsRepo: Repository<ActorEntity>
   ) {}
 
   @Process()

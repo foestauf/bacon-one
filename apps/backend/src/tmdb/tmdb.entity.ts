@@ -1,14 +1,14 @@
-import { Column, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity("tmdbConfig")
+@Entity('tmdbConfig')
 export class TMDBEntity {
   @PrimaryColumn({
-    type: "enum",
-    enum: ["CONFIG"],
-    default: "CONFIG",
+    type: 'enum',
+    enum: ['CONFIG'],
+    default: 'CONFIG',
     unique: true,
   })
-  type: "CONFIG";
+  type: 'CONFIG';
 
   @Column()
   base_url: string;
@@ -16,22 +16,22 @@ export class TMDBEntity {
   @Column()
   secure_base_url: string;
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   backdrop_sizes: string[];
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   logo_sizes: string[];
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   poster_sizes: string[];
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   profile_sizes: string[];
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   still_sizes: string[];
 
-  @Column({ type: "simple-array" })
+  @Column({ type: 'simple-array' })
   change_keys: string[];
 
   @UpdateDateColumn()

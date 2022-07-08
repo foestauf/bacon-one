@@ -17,7 +17,7 @@ export const jsonLineParser = (filePath: string) => {
                 return false;
               }
             })
-            .map((line) => JSON.parse(line)),
+            .map((line) => JSON.parse(line))
         );
       }
     });

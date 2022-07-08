@@ -7,7 +7,7 @@ import { MovieEntity } from './entities/movie.entity';
 export class MovieBulkUpdateWorker {
   constructor(
     @InjectRepository(MovieEntity)
-    private readonly moviesRepo: Repository<MovieEntity>,
+    private readonly moviesRepo: Repository<MovieEntity>
   ) {}
 
   @Process()

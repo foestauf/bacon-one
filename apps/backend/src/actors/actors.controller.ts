@@ -1,11 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Param,
-  Put,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Param, Put, Query } from '@nestjs/common';
 import { ActorsService } from './actors.service';
 import { ActorEntity } from './entities/actor.entity';
 

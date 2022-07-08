@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { chain } from 'stream-chain';
 import { parser } from 'stream-json/jsonl/Parser';
 

@@ -2,8 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "backend": "apps/backend",
     "bacon-one": "apps/bacon-one",
     "bacon-one-e2e": "apps/bacon-one-e2e"
   }
